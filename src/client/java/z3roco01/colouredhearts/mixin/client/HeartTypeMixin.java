@@ -1,4 +1,4 @@
-package z3roco01.lifed.mixin.client;
+package z3roco01.colouredhearts.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
@@ -9,54 +9,54 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import z3roco01.lifed.Lifed;
+import z3roco01.colouredhearts.ColouredHearts;
 
 @Mixin(InGameHud.HeartType.class)
 public abstract class HeartTypeMixin {
     @Unique
-    private static final Identifier DARK_GREEN_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/full");
+    private static final Identifier DARK_GREEN_FULL = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/dark_green/full");
     @Unique
-    private static final Identifier DARK_GREEN_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/half");
+    private static final Identifier DARK_GREEN_HALF = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/dark_green/half");
     @Unique
-    private static final Identifier DARK_GREEN_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/full_blinking");
+    private static final Identifier DARK_GREEN_FULL_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/dark_green/full_blinking");
     @Unique
-    private static final Identifier DARK_GREEN_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/half_blinking");
+    private static final Identifier DARK_GREEN_HALF_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/dark_green/half_blinking");
 
     @Unique
-    private static final Identifier GREEN_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/full");
+    private static final Identifier GREEN_FULL = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/green/full");
     @Unique
-    private static final Identifier GREEN_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/half");
+    private static final Identifier GREEN_HALF = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/green/half");
     @Unique
-    private static final Identifier GREEN_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/full_blinking");
+    private static final Identifier GREEN_FULL_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/green/full_blinking");
     @Unique
-    private static final Identifier GREEN_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/half_blinking");
+    private static final Identifier GREEN_HALF_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/green/half_blinking");
 
     @Unique
-    private static final Identifier YELLOW_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/full");
+    private static final Identifier YELLOW_FULL = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/yellow/full");
     @Unique
-    private static final Identifier YELLOW_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/half");
+    private static final Identifier YELLOW_HALF = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/yellow/half");
     @Unique
-    private static final Identifier YELLOW_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/full_blinking");
+    private static final Identifier YELLOW_FULL_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/yellow/full_blinking");
     @Unique
-    private static final Identifier YELLOW_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/half_blinking");
+    private static final Identifier YELLOW_HALF_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/yellow/half_blinking");
 
     @Unique
-    private static final Identifier RED_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/full");
+    private static final Identifier RED_FULL = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/red/full");
     @Unique
-    private static final Identifier RED_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/half");
+    private static final Identifier RED_HALF = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/red/half");
     @Unique
-    private static final Identifier RED_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/full_blinking");
+    private static final Identifier RED_FULL_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/red/full_blinking");
     @Unique
-    private static final Identifier RED_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/half_blinking");
+    private static final Identifier RED_HALF_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/red/half_blinking");
 
     @Unique
-    private static final Identifier GREY_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/full");
+    private static final Identifier GREY_FULL = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/grey/full");
     @Unique
-    private static final Identifier GREY_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/half");
+    private static final Identifier GREY_HALF = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/grey/half");
     @Unique
-    private static final Identifier GREY_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/full_blinking");
+    private static final Identifier GREY_FULL_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/grey/full_blinking");
     @Unique
-    private static final Identifier GREY_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/half_blinking");
+    private static final Identifier GREY_HALF_BLINKING = Identifier.of(ColouredHearts.MOD_ID, "hud/hearts/grey/half_blinking");
 
     @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
     private void getTexture(boolean hardcore, boolean half, boolean blinking, CallbackInfoReturnable<Identifier> cir) {
