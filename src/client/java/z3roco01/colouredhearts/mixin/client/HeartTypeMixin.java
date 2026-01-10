@@ -1,0 +1,73 @@
+package z3roco01.lifed.mixin.client;
+
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import z3roco01.lifed.Lifed;
+
+@Mixin(InGameHud.HeartType.class)
+public abstract class HeartTypeMixin {
+    @Unique
+    private static final Identifier DARK_GREEN_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/full");
+    @Unique
+    private static final Identifier DARK_GREEN_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/half");
+    @Unique
+    private static final Identifier DARK_GREEN_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/full_blinking");
+    @Unique
+    private static final Identifier DARK_GREEN_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/dark_green/half_blinking");
+
+    @Unique
+    private static final Identifier GREEN_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/full");
+    @Unique
+    private static final Identifier GREEN_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/half");
+    @Unique
+    private static final Identifier GREEN_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/full_blinking");
+    @Unique
+    private static final Identifier GREEN_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/green/half_blinking");
+
+    @Unique
+    private static final Identifier YELLOW_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/full");
+    @Unique
+    private static final Identifier YELLOW_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/half");
+    @Unique
+    private static final Identifier YELLOW_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/full_blinking");
+    @Unique
+    private static final Identifier YELLOW_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/yellow/half_blinking");
+
+    @Unique
+    private static final Identifier RED_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/full");
+    @Unique
+    private static final Identifier RED_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/half");
+    @Unique
+    private static final Identifier RED_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/full_blinking");
+    @Unique
+    private static final Identifier RED_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/red/half_blinking");
+
+    @Unique
+    private static final Identifier GREY_FULL = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/full");
+    @Unique
+    private static final Identifier GREY_HALF = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/half");
+    @Unique
+    private static final Identifier GREY_FULL_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/full_blinking");
+    @Unique
+    private static final Identifier GREY_HALF_BLINKING = Identifier.of(Lifed.MOD_ID, "hud/hearts/grey/half_blinking");
+
+    @Inject(method = "getTexture", at = @At("HEAD"), cancellable = true)
+    private void getTexture(boolean hardcore, boolean half, boolean blinking, CallbackInfoReturnable<Identifier> cir) {
+        // dont worry about hardcore hearts, would be odd to use hardcore and life series
+        if(hardcore) return;
+
+        // also dont override things like wither and poison hearts
+        if(((InGameHud.HeartType)(Object)this) != InGameHud.HeartType.NORMAL) return;
+
+        ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        
+        player.getScoreboardTeam().getColor();
+    }
+}

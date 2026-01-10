@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "z3roco01.colouredhearts.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+      "HeartTypeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

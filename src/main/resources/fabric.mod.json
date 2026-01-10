@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "coloured-hearts",
+	"version": "${version}",
+	"name": "Coloured Hearts",
+	"description": "Colours your hearts based off your team colour",
+	"authors": [
+		"z3roco01"
+	],
+	"contact": {
+		"sources": "https://github.com/z3roco01/"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/coloured-hearts/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"z3roco01.colouredhearts.ColouredHearts"
+		],
+		"client": [
+			"z3roco01.colouredhearts.ColouredHeartsClient"
+		]
+	},
+	"mixins": [
+		"coloured-hearts.mixins.json",
+		{
+			"config": "coloured-hearts.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
